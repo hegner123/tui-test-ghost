@@ -1,6 +1,7 @@
 const std = @import("std");
 const Allocator = std.mem.Allocator;
 const json = std.json;
+const lib = @import("lib.zig");
 
 // --- Public types ---
 
@@ -179,7 +180,7 @@ pub fn handleInitialize(alloc: Allocator, req: Request) !Response {
 
     var server_info = json.ObjectMap.init(alloc);
     try server_info.put("name", .{ .string = "tui-test-ghost" });
-    try server_info.put("version", .{ .string = "0.3.0" });
+    try server_info.put("version", .{ .string = lib.version });
 
     var result = json.ObjectMap.init(alloc);
     try result.put("protocolVersion", .{ .string = "2024-11-05" });

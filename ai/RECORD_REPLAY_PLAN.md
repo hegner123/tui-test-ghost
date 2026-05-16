@@ -341,9 +341,9 @@ Plan: Record/Replay for TUI Test Sessions
  - Assertions: path.len > 0; post: pool cleaned up (via defer)
  - Tests: integration test in Phase 5
 
- Step 4.2 — Add module exports to root.zig
+ Step 4.2 — Add module exports to lib.zig
 
- Add to root.zig:
+ Add to lib.zig:
  pub const record = @import("record.zig");
  pub const replay = @import("replay.zig");
 
@@ -404,7 +404,7 @@ Plan: Record/Replay for TUI Test Sessions
  | src/replay.zig | NEW — Entry parser, loadRecording (with validation), compareResult, replayAll, formatters |
  | src/tools.zig | Add tui_record_start/stop defs, schemas, dispatch routes, handlers; dispatch gains recording_state param |
  | src/main.zig | Create RecordingState, pass to dispatch, add recording hook, add replay CLI branch |
- | src/root.zig | Add record and replay module re-exports |
+ | src/lib.zig | Add record and replay module re-exports |
  | README.md | Document new tools, replay CLI, JSONL format, single-session constraint |
 
  Files NOT Modified

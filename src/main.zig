@@ -1,5 +1,6 @@
 const std = @import("std");
 const builtin = @import("builtin");
+const lib = @import("lib.zig");
 const mcp_mod = @import("mcp.zig");
 const tools_mod = @import("tools.zig");
 const SessionPool = @import("SessionPool.zig");
@@ -48,7 +49,7 @@ pub fn main() !void {
     return runMcpServer(base_alloc);
 }
 
-const version = "0.3.0";
+const version = lib.version;
 
 fn printVersion() void {
     var out_buf: [256]u8 = undefined;

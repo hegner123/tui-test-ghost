@@ -9,7 +9,7 @@ pub fn build(b: *std.Build) void {
 
     // -- Library module --
     const lib_mod = b.createModule(.{
-        .root_source_file = b.path("src/root.zig"),
+        .root_source_file = b.path("src/lib.zig"),
         .target = target,
         .optimize = optimize,
     });
