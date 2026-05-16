@@ -122,7 +122,7 @@ tui-test-ghost/
 ├── justfile                  -- Build/test/install commands
 ├── src/
 │   ├── main.zig              -- Entry point: MCP server + CLI dispatch
-│   ├── root.zig              -- Library root (public API re-exports)
+│   ├── lib.zig               -- Library root (public API re-exports)
 │   ├── Pty.zig               -- PTY open/close/resize/read/write
 │   ├── Process.zig           -- Fork/exec child process on PTY
 │   ├── Terminal.zig          -- Wrapper around ghostty-vt Terminal
@@ -164,7 +164,7 @@ tui-test-ghost/
 - Import `ghostty-vt` module via `b.lazyDependency("ghostty", .{})`
 - Test: `zig build` compiles; `zig build test` runs (even if no tests yet)
 
-**Step 0.1.3: Create src/root.zig (library root)**
+**Step 0.1.3: Create src/lib.zig (library root)**
 - Objective: Empty library root that imports ghostty-vt to prove linkage
 - Content: `pub const ghostty_vt = @import("ghostty-vt");` + a trivial `comptime` assertion
 - Test: `zig build test` passes

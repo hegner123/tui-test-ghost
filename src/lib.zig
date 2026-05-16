@@ -3,6 +3,9 @@ const ghostty_vt = @import("ghostty-vt");
 // tui-test-ghost — TUI testing toolkit built on ghostty-vt.
 // This is the library root. All public API is re-exported from here.
 
+// Single source of truth for the project version. Keep in sync with build.zig.zon as part of the release checklist.
+pub const version = "0.3.0";
+
 // Verify ghostty-vt linkage at compile time.
 comptime {
     // Terminal type must exist and be a struct.
